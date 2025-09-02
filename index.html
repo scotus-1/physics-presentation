@@ -92,7 +92,7 @@
 			<div class="slides">
 				<section data-auto-animate>
 					<h2>the rendering equation</h2>
-					<h3>what's in a hemisphere?</h3>
+					<h3>what's in a image?</h3>
 					<p><small>by titus nguyen</small></p>
 				</section>
 			
@@ -105,7 +105,7 @@
 				
 				<section data-auto-animate data-transition="fade-out">
 					<p data-id="eq">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = {\Large\color{red} \int_\Omega} f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t) L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t) (\omega_{\text{i}}\cdot\mathbf n) \operatorname d \omega_{\text{i}}$</p>
-					<p>light out = the average of every reflected light ray inside the hemisphere</p>
+					<p>light out = the sum of every reflected light ray inside the hemisphere</p>
 				</section>
 
 				<section data-auto-animate data-transition="fade">
@@ -155,19 +155,45 @@
 					<img style="width: 800px; height: auto;"src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Lambert_Cosine_Law_1.svg/1280px-Lambert_Cosine_Law_1.svg.png">
 				</section>
 
-				<section>
+				<section data-auto-animate="">
 					<div class="container">
 						<div class="column">
 							<img style="width: 800px; height: auto;"src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Lambert_Cosine_Law_1.svg/1280px-Lambert_Cosine_Law_1.svg.png">
 						</div>
 						<div class="column">
-							<p>$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = \frac{1}{\Omega_n}\sum_{n=1}^{\Omega} c L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t)$</p>
+							<p class="fragment semi-fade-out">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = \frac{1}{\Omega_n}\sum_{n=1}^{\Omega} c L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t)$</p>
 							<br>
 							<p style="font-size: 90%" class="fragment">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = \frac{1}{\Omega_n}\sum_{n=1}^{\Omega} c L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t)(\omega_{\text{i}}\cdot\mathbf n)$</p>
 						</div>
 					</div>
 				</section>
+
+				<section data-auto-animate>
+					<p data-id="eq">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = {\int_\Omega} f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t) L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t) (\omega_{\text{i}}\cdot\mathbf n) \operatorname d \omega_{\text{i}} = $</p>
+					<img class="r-stretch" src="assets/image-1920-diffuse.png">
+					<p><small>perfectly cloudy, blue sky; two perfectly diffuse surfaces</small></p>
+				</section>
 				
+				<section data-auto-animate>
+					<p data-id="eq">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = {\int_\Omega} f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t) L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t) (\omega_{\text{i}}\cdot\mathbf n) \operatorname d \omega_{\text{i}} = $</p>
+					<img class="r-stretch" src="assets/image-1920-diffuse.png">
+					<h2>what's in a image?</h2>
+
+				</section>
+				
+				<section data-auto-animate data-transition="fade-out">
+					<h2>what's in a image?</h2>
+					<img class="r-stretch" src="assets/image-1920-diffuse.png">
+					<p>1920 x 1080 x 500 rays/pxl x 500 rays/ray</p>
+				</section>
+
+				<section data-transition="zoom">
+					<h3 class="r-fit-text">5.2 billion rays</h3>
+				</section>
+
+				<section data-transition="fade-in">
+					<h3>thank you</h3>
+				</section>
 			
 			</div>
 			</div>
