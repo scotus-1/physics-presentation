@@ -91,899 +91,83 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-auto-animate>
-					<h2>$\vec{p}\text{ath}$ $t\text{racing}$</h2>
-					<h3 data-id="tbox">what do you know about vectors?</h3>
+					<h2>the rendering equation</h2>
+					<h3>what's in a hemisphere?</h3>
 					<p><small>by titus nguyen</small></p>
 				</section>
-
+			
 				<section data-auto-animate>
-					<h3 data-id="tbox">what do you know about vectors?</h3>
-					<p class="fragment">magnitude and direction</p>
-					<p class="fragment">"refers to quantities that cannot be expressed by a single scalar"</p>
-					<p class="fragment">$ai + bj + ck$ , $&lt;a, b, c&gt;$</a></p>
-					<div class="fragment">					
-						<img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vector_from_A_to_B.svg" style="width: 30%; height: auto;">
-					</div>
-				</section>
-
-				<section data-auto-animate data-transition="none-out">
-					<img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vector_from_A_to_B.svg" style="width:150%; height: auto;">
-				</section>
-
-				<section data-transition="zoom">
-					<h2 class="r-fit-text">RAY</h2>
-				</section>
-
-				<section data-transition="fade" data-auto-animate>
-					<h2>why rays, vectors, points, scalars or...?</h2>
-				</section>
-
-				<section data-transition="fade-out" data-auto-animate="">
-					<h2>why rays, vectors, points, scalars or...?</h2>
-					<span class="">
-						<div class="footnote">ref: "The 6 Shapes of God" by CJ The X"</div>
-						<h1 class="fragment strike">become <span style="color:red;">god</span></h1>
-					</span>
-					<h2 class="fragment">construct an artificial reality out of math</h2>
-				</section>
-
-				<section data-transition="fade" data-auto-animate>
-					<h3>chapter one: the gift of sight & ray tracing</h3>
-					<h4 data-id="rltext">how do we create reality?</h3>
-				</section>
-
-				<section data-auto-animate>
-					<h4 style="font-size: 200%;" data-id="rltext">how do we see reality?</h4>
-				</section>
-
-				<section data-auto-animate>
-					<h4 data-id="rltext">how do we see reality?</h4>
-					<video class="fragement fade-out r-stretch" muted loop data-autoplay src="./assets/light2eye.mp4"></video>
-					<div class="caption">video: "Coding Adventures: Ray Tracing" by Sebastian Lague</div>
-				</section>
-
-				<section data-auto-animate>
-					<h4 data-id="rltext">how do we capture reality?</h4>
-					<video class="fragement fade-out r-stretch" muted loop data-autoplay src="./assets/eye2light.mp4"></video>
-					<div class="caption">video: "Coding Adventures: Ray Tracing" by Sebastian Lague</div>
-				</section>
-
-				<section>
-					<h2>ray tracing</h2>
-					<div class="container">
-						<div class="column">
-							<ul>
-								<li data-fragment-index="0" class="fragment strike">rasterization</li>
-								<li data-fragment-index="0" class="fragment custom blur">ray casting</li>
-								<li data-fragment-index="1" class="fragment custom blur">recursive ray tracing</li>
-								<li data-fragment-index="2" class="fragment custom blur">distributive ray tracing</li>
-							</ul>
-						</div>
-						<div class="column">
-							<div class="r-stack">
-								<div data-fragment-index="0" class="fragment fade-out">
-									<img width="400" height="auto" style="margin: 0;" src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Top-left_triangle_rasterization_rule.gif">
-									<img width="700" height="auto" style="margin: 0;" src="https://upload.wikimedia.org/wikipedia/commons/4/47/Albrecht_durer_ray_tracing_enhanced.png">
-									<div class="caption" style="font-size: 20pt;">from: Wikipedia, "Rasterization", "Ray Tracing" Dürer (c.1532)</div>
-								</div>
-
-								<div data-fragment-index="0" class="fragment current-visible">
-									<img width="400" height="400" style="margin: 0;" src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Idealized_universal_joint_generated_by_ray_tracing.jpg">
-									<img width="600" height="auto" style="margin: 0;" src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Simple_raycasting_with_fisheye_correction.gif">
-									<div class="caption" style="margin-left: 14em; max-width: fit-content; text-align: center;">from: Wikipedia, "Ray Casting"</div>
-								</div>
-
-								<div data-fragment-index="1" class="fragment current-visible">
-									<img width="400" height="400" style="margin: 0;" src="https://www.scratchapixel.com/images/ray-tracing-refresher/rt-whitted.png?">
-									<img width="600" height="auto" style="margin: 0;" src="https://i.imgur.com/tlhy1hT.jpeg">
-									<div class="caption" style="margin-left: 13em; max-width: fit-content;">Whitted, 1980; Cyberpunk 2077</div>
-								</div>		
-								
-								<div data-fragment-index="2" class="fragment">
-									<img width="600" height="600" style="margin: 0;" src="https://upload.wikimedia.org/wikipedia/commons/3/32/Recursive_raytrace_of_a_sphere.png">
-									<div class="caption" style="max-width: fit-content;">from: Wikipedia, "Ray Tracing" (c.2008)</div>
-								</div>								
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section data-auto-animate>
-					<h3>chapter two: the rendering equation</h3>
-					<h4 data-id="rltext">what are we missing?</h4>
-				</section>
-
-				<section data-auto-animate>
-					<h4 data-id="rltext" style="font-size: 150%;">what are we missing?</h4>
-					<p>$L_{\text{o}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = L_{\text{e}}(\mathbf x, \omega_{\text{o}}, \lambda, t) + L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t)$ </p>
-				</section>
-
-				<section data-auto-animate>
-					<h4 data-id="rltext" style="font-size: 150%;">what are we missing?</h4>
-					<p>$L_{\text{o}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = L_{\text{e}}(\mathbf x, \omega_{\text{o}}, \lambda, t) + L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t)$ </p>
+					<h2>the rendering equation</h2>
 					<img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Rendering_eq.png">
-					<p data-id="eq">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = \int_\Omega f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t) L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t) (\omega_{\text{i}}\cdot\mathbf n) \operatorname d \omega_{\text{i}}$</p>
-					<div class="footnote">from: Wikipedia, "Rendering Equation"</div>
-				</section>
-
-				<section data-auto-animate>
-					<h4 data-id="rltext" style="font-size: 150%;">what are we missing?</h4>
 					<p>$L_{\text{o}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = L_{\text{e}}(\mathbf x, \omega_{\text{o}}, \lambda, t) + L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t)$ </p>
-					<img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Rendering_eq.png">
+					<p data-id="eq">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = {\int_\Omega} f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t) L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t) (\omega_{\text{i}}\cdot\mathbf n) \operatorname d \omega_{\text{i}}$</p>
+				</section>		
+				
+				<section data-auto-animate data-transition="fade-out">
 					<p data-id="eq">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = {\Large\color{red} \int_\Omega} f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t) L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t) (\omega_{\text{i}}\cdot\mathbf n) \operatorname d \omega_{\text{i}}$</p>
-					<div class="footnote">from: Wikipedia, "Rendering Equation"</div>				
+					<p>light out = the average of every reflected light ray inside the hemisphere</p>
 				</section>
 
-				<section>
-					<h3>chapter three: path tracing</h3>
-					<h4>let's go gambling!</h4>
+				<section data-auto-animate data-transition="fade">
+					<p data-id="eq2">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t)$</p>
+				</section>
+
+				<section data-auto-animate data-transition="fade">
+					<p data-id="eq2">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t)$</p>
+					<img src="assets/reflectance.png">
 				</section>
 				
-				<section data-auto-animate>
-					<h3>the monte carlo method</h3>
-					<img class="stretch" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Pi_monte_carlo_all.gif/800px-Pi_monte_carlo_all.gif">
-					<p><small>from: Wikipedia, "Monte Carlo method"</small></p>
-				</section>
-
-				<section data-auto-animate>
-					<div class="container">
-						<div class="column">
-							<video mute loop data-autoplay src="./assets/blender_render.mp4"></video>
-							<div class="caption">Blender Classroom rendered using Cycles</div>
-						</div>
-						<div class="column">
-							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Pi_monte_carlo_all.gif/800px-Pi_monte_carlo_all.gif">
-						</div>						
-					</div>
-				</section>
-				
-				<section>
-					<div class="container">
-						<div class="column">
-							<div id="hyperion-pdf"></div>
-						</div>
-						<div class="column">
-							<div id="arnold-pdf"></div>
-						</div>			
-						<div class="column">
-							<div id="renderman-pdf"></div>
-						</div>					
-					</div>
-				</section>
-
-				<section>
-					<h3>chapter four: let us begin</h3>
-				</section>
-
-				<section>
-					<h3>thank you!</h3>
-					<img src="https://raytracing.github.io/images/cover/CoverRTW1-small.jpg">
-					<img style="width: 400px; height: auto; margin-bottom: 4em; margin-left: 1em;" src="https://rustacean.net/assets/cuddlyferris.svg">
-				</section>
-
-				<section data-auto-animate>
-					<h2>the camera</h2>
-					<div class="container">
-						<div class="column">
-							<img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/RaysViewportSchema.png">
-							<div class="caption">from: Wikipedia, "Ray Tracing"</div>
-						</div>
-						<div class="column">
-							<img src="https://raytracing.github.io/images/fig-1.04-pixel-grid.jpg">
-							<div class="caption">from Ray Tracing in One Weekend</div>
-						</div>			
-					</div>
+				<section data-auto-animate data-transition="slide">
+					<p data-id="eq2">what is a $f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t)$</p>
+					<img src="assets/brdfs.png">
+					<p><small>ref: Cook and Torrence, 1982</small></p>
 				</section>
 				
 
 				<section data-auto-animate>
+					<p data-id="eq2">what is our $f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t)$?</p>
+					<img src="https://raytracing.github.io/images/fig-1.10-random-vec-horizon.jpg">
+					<p><small>ref: Shirley, 2018</small></p>
+				</section>
+
+				<section data-auto-animate>
 					<div class="container">
-						<div class="column">
-							<pre style="height: 775px;"><code data-trim data-noescape class="language-rust">
-    fn init(&mut self) {
-        // const image_height: u32 = if image_width < 1 {1} else {image_height};
-        // image width & height are rounded to integers for pixel values
-        self.image_height = (self.image_width as f32/self.aspect_ratio) as u32;
-
-        // viewport properties
-        self.focal_length = (self.center - self.look_at_point).length();
-        let theta = degs_to_rads(self.vfov as f32);
-        let h = (theta / 2.0).tan();
-        let viewport_height = 2.0 * h * self.focal_length;
-        let viewport_width: f32 = viewport_height * (self.image_width as f32 / self.image_height as f32);
-
-        // calculate basis vectors
-        self.w = Dir3::new(self.center - self.look_at_point).unwrap();
-        self.u = Dir3::new(self.vup.cross(self.w.as_vec3())).unwrap();
-        self.v = Dir3::new(self.w.cross(self.u.as_vec3())).unwrap();
-        
-        // viewport vectors and delta vectors, basically from (0,0) to whatever +u,+v
-        let viewport_u: Vec3 = viewport_width * self.u;
-        let viewport_v: Vec3 = viewport_height * -self.v;
-        self.pixel_delta_u = viewport_u / self.image_width as f32;
-        self.pixel_delta_v = viewport_v / self.image_height as f32;
-        
-        // note: foward is in the -z direction, which is why the focal length vec is subbed from cam_center
-        let viewport_upper_left = self.center - (self.focal_length * self.w) - viewport_u/2.0 - viewport_v/2.0;
-        self.pixel00_loc = viewport_upper_left + 0.5*(self.pixel_delta_u + self.pixel_delta_v);
-
-    }
-							</code></pre>
-
-						</div>
-						<div class="column">
-							<div class="r-stack">
-								<img class="" src="https://raytracing.github.io/images/fig-1.04-pixel-grid.jpg">	
-								<img class="fragment" src="https://raytracing.github.io/images/fig-1.18-cam-view-geom.jpg">							
-								<img class="fragment" src="https://raytracing.github.io/images/fig-1.19-cam-view-dir.jpg">
-
-							</div>
-							<div class="caption">from Ray Tracing in One Weekend</div>
-							
-						</div>			
-					</div>
-				</section>
-
-				<section data-background-image="https://raytracing.github.io/images/img-1.02-blue-to-white.png">
-					<p>blendedValue = (1-a) ⋅ posY + a ⋅ posY</p>
-					<pre style="width: fit-content;"><code data-trim data-noescape class="language-rust">
-fn render(&mut self) {
-	for row in 1..image_height {
-        for pixel in 1..image_width {
-						let pixel_center = pixel00_loc + (row * pixel_delta_u) + (pixel * pixel_delta_v);
-						let ray_direction = pixel_center - camera_center;
-						let ray = Ray3d::new(camera_center, ray_direction.normalize().unwrap())
-
-						let t = 0.5*(ray.direction.y() + 1.0);
-						let pixel_color = (1.0-a)*color(1.0, 1.0, 1.0) + a*color(0.5, 0.7, 1.0);
-						write_color(&mut out_handle, pixel_color);
-        }
-    }
-}
-					</code></pre>					
-				</section>
-				
-				<section data-background-image="https://raytracing.github.io/images/img-1.02-blue-to-white.png">
-					<h3>chapter five: rays and spheres</h3>
-				</section>
-
-				<section data-auto-animate data-background-image="https://raytracing.github.io/images/img-1.02-blue-to-white.png">
-					<h3>what is a sphere?</h3>
-				</section>
-				<section data-auto-animate data-background-image="https://raytracing.github.io/images/img-1.02-blue-to-white.png">
-					<h3>what is a sphere?</h3>
-					<h3>$x^2 + y^2 + z^2 = r^2$</h3>
-				</section>
-				<section data-auto-animate data-background-image="https://raytracing.github.io/images/img-1.02-blue-to-white.png">
-					<h3>what is a sphere?</h3>
-					<p class="fragment">$(C_x - x)^2 + (C_y - y)^2 + (C_z - z)^2 = r^2$</p>
-					<p class="fragment">$(\mathbf{C} - \mathbf{P}) \cdot (\mathbf{C} - \mathbf{P}) = r^2$</p>
-					<h3 class="fragment">rays &lt;3 spheres</h3>
-					<p class="fragment">$\mathbf{P}(t) = \mathbf{Q} + t\mathbf{d}$</p>
-					<p class="fragment">$(\mathbf{C} - \mathbf{P}(t)) \cdot (\mathbf{C} - \mathbf{P}(t)) = r^2$</p>
-					<p class="fragment">$(-t \mathbf{d} + (\mathbf{C} - \mathbf{Q})) \cdot (-t \mathbf{d} + (\mathbf{C} - \mathbf{Q})= r^2$</p>
-					<p class="fragment">$t^2 \mathbf{d} \cdot \mathbf{d}- 2t \mathbf{d} \cdot (\mathbf{C} - \mathbf{Q})+ (\mathbf{C} - \mathbf{Q}) \cdot (\mathbf{C} - \mathbf{Q}) = r^2$</p>
-					<p class="fragment">$t^2 \mathbf{d} \cdot \mathbf{d}- 2t \mathbf{d} \cdot (\mathbf{C} - \mathbf{Q})+ (\mathbf{C} - \mathbf{Q}) \cdot (\mathbf{C} - \mathbf{Q}) - r^2 = 0$</p>
-				</section>
-
-				<section data-auto-animate data-background-image="https://raytracing.github.io/images/img-1.02-blue-to-white.png">
-					<h3>rays &lt;3 spheres</h3>
-					<p>$t^2 \mathbf{d} \cdot \mathbf{d}- 2t \mathbf{d} \cdot (\mathbf{C} - \mathbf{Q})+ (\mathbf{C} - \mathbf{Q}) \cdot (\mathbf{C} - \mathbf{Q}) - r^2 = 0$</p>
-					<p>$a = \mathbf{d} \cdot \mathbf{d}$</p>
-					<p>$b = -2 \mathbf{d} \cdot (\mathbf{C} - \mathbf{Q})$</p>
-					<p>$c = (\mathbf{C} - \mathbf{Q}) \cdot (\mathbf{C} - \mathbf{Q}) - r^2$</p>
-				</section>
-
-				<section data-auto-animate data-background-image="https://raytracing.github.io/images/img-1.02-blue-to-white.png">
-					<div>
-						<h3>rays &lt;3 spheres</h3>
-						<p>$a = \mathbf{d} \cdot \mathbf{d}$</p>
-						<p>$b = -2 \mathbf{d} \cdot (\mathbf{C} - \mathbf{Q})$</p>
-						<p>$c = (\mathbf{C} - \mathbf{Q}) \cdot (\mathbf{C} - \mathbf{Q}) - r^2$</p>
-					</div>
-					<div class="container">
-						<div class="column">
-							<img style="height: 400px;" src="https://raytracing.github.io/images/fig-1.05-ray-sphere.jpg">
-						</div>
-						<div class="column">
-							<pre style="width: fit-content;"><code data-trim data-noescape class="language-rust">
-fn hit_sphere(center: Point3d, radius: f32, r: &Ray3d) -> bool {
-    let oc = center - r.origin();
-    let a = r.direction().dot(r.direction());
-    let b = -2.0 * r.direction().dot(oc);
-    let c = oc.dot(oc) - radius*radius;
-    let discriminant = b*b - 4*a*c;
-    return (discriminant >= 0);
-}
-					</code></pre>		
-						</div>
-					</div>
-				</section>
-
-				<section class="img-pixel" data-background-image="https://raytracing.github.io/images/img-1.03-red-sphere.png">
-					<pre style="width: fit-content;"><code data-trim data-noescape class="language-rust">
-fn ray_color(r: &Ray3d) -> Color {
-    if hit_sphere(point3(0,0,-1), 0.5, r) {
-        return color(1, 0, 0);
-	  }
-
-		let t = 0.5*(r.direction.y() + 1.0);
-		let pixel_color = (1.0-a)*color(1.0, 1.0, 1.0) + a*color(0.5, 0.7, 1.0);
-		write_color(&mut out_handle, pixel_color);
-}
-					</code></pre>
-				</section>
-
-				<section class="img-pixel" data-background-image="https://raytracing.github.io/images/img-1.03-red-sphere.png">
-					<div class="grey-bg" style="width: fit-content; margin-left: 32.3%;">
-						<h3>rays &lt;3 spheres, again?</h3>
-						<p>$b = -2 \mathbf{d} \cdot (\mathbf{C} - \mathbf{Q}) ; b = -2h$</p>
-						<p>$= \frac{-(-2h) \pm \sqrt{(-2h)^2 - 4ac}}{2a}$</p>
-						<p>$= \frac{h \pm \sqrt{h^2 - ac}}{a}$</p>
-						<p>$h = \frac{b}{-2} = \mathbf{d} \cdot (\mathbf{C} - \mathbf{Q})$</p>
-					</div>
-				</section>
-
-				<section class="img-pixel" data-background-image="https://raytracing.github.io/images/img-1.03-red-sphere.png">
-					<iframe data-preload style="height: 800px; width: 1200px;" data-src="https://www.realtimerendering.com/intersections.html"></iframe>
-				</section>
-
-				<section class="img-pixel" data-background-image="https://raytracing.github.io/images/img-1.03-red-sphere.png"></section>
-
-
-				<section data-transition="transition" data-auto-animate class="img-pixel" data-background-image="https://raytracing.github.io/images/img-1.03-red-sphere.png">
-					<h3>chapter 6: normals?</h3>
-				</section>
-
-				<section data-auto-animate class="img-pixel" data-background-image="https://raytracing.github.io/images/img-1.03-red-sphere.png">
-					<h3>chapter 6: normals?</h3>
-					
-					<div class="container">
-						<div class="column">
-							<img src="https://raytracing.github.io/images/fig-1.06-sphere-normal.jpg">
-						</div>
-						<div class="column">
-							<pre style="width: fit-content; height: 22em;"><code data-trim data-noescape class="language-rust" data-line-numbers="3-8,12-16">
-fn ray_color(r: &Ray3d) {
-	  let t = hit_sphere(point3(0,0,-1), 0.5, r);
-    if t > 0.0 {
-        let n=N = r.at(t) - vec3(0,0,-1);
-		    return 0.5*color(N.x()+1, N.y()+1, N.z()+1);
-	  }
-    ...
-}
-
-fn hit_sphere(center: Point3d, radius: f32, r: &Ray3d) -> f32 {
-    ...
-    let discriminant = b*b - 4*a*c;
-	  if discriminant < 0 {
-		  return -1.0;
-	  } else {
-          return (discriminant >= 0);
-	  }
-}
-					</code></pre>
-						</div>						
-					</div>
-				</section>
-
-				<section class="img-pixel" data-background-image="https://raytracing.github.io/images/img-1.04-normals-sphere.png">
-				<div class="container">
-					<div class="column">
-						<img src="https://raytracing.github.io/images/fig-1.07-normal-sides.jpg">
-					</div>
-					<div class="column">
-							<pre style="width: fit-content"><code data-trim data-noescape class="language-rust">
-if ray.direction().dot(outward_normal) > 0.0 {
-    // ray is inside the sphere
-    normal = -outward_normal;
-    front_face = false;
-} else {
-    // ray is outside the sphere
-    normal = outward_normal;
-    front_face = true;
-}
-					</code></pre>
-					</div>
-				</div>
-				</section>
-
-				<section class="img-pixel" data-background-image="https://raytracing.github.io/images/img-1.04-normals-sphere.png">
-					<p>hittable objects!</p>
-							<pre style="width: fit-content; height: 500px; opacity: 90%;"><code data-trim data-noescape class="language-rust" data-line-numbers="3-7|9-11|13-20|22-24">
-impl hittable::Hittable for Sphere {
-    fn hit(&self, r: &Ray3d, ray_t: Interval) -> Option&lt;HitRecord&gt; {
-        let o2c_vec = self.center - r.origin;
-        let a = r.direction.length_squared();
-        let h = r.direction.dot(o2c_vec);
-        let c = o2c_vec.length_squared() - self.radius*self.radius;
-        let discriminant = h*h - a*c;
-
-        if discriminant < 0.0 {
-            return None;
-        }
-
-        let sqrtd = sqrt(discriminant);
-        let mut root = (h - sqrtd) / a;
-        if !ray_t.surrounds(root) {
-            root = (h + sqrtd) / a;
-            if !ray_t.surrounds(root) {
-                return None;
-            }
-        }
-        
-        let t = root;
-        let p = r.get_point(t);
-        let normal = Dir3::new((p - self.center) / self.radius).unwrap();
-        
-        Some(HitRecord::new(p, normal, t, r, self.mat.clone()))
-    }
-}
-					</code></pre>					
-				</section>
-
-				<section class="img-pixel" data-background-image="https://raytracing.github.io/images/img-1.04-normals-sphere.png"></section>
-				<section class="img-pixel" data-background-image="https://raytracing.github.io/images/img-1.05-normals-sphere-ground.png">
-					<pre style="width: fit-content; height: 200px; opacity: 90%;"><code data-trim data-noescape class="language-rust">
-fn main() {
-    let mut world: HittableList = HittableList::hittable_list(None);
-    world.add(Rc::new(sphere(Point3::new(0.0, 0.0, -1.0), 0.5)));
-    world.add(Rc::new(sphere(Point3::new(0.0, -100.5, -1.0), 100.0)));
-
-    let mut cam: Camera = Camera::new();
-    cam.set_image_width(1080);
-    cam.render(&world);
-}
-					</code></pre>
-				</section>
-
-				<section data-transition="fade" data-auto-animate class="img-pixel" data-background-image="https://raytracing.github.io/images/img-1.05-normals-sphere-ground.png">
-					<h3>chapter 7: anti-aliasing & magic!</h3>
-				</section>
-
-				<section data-auto-animate class="img-pixel" data-background-image="https://raytracing.github.io/images/img-1.05-normals-sphere-ground.png">
-					<h3>chapter 7: anti-aliasing & magic!</h3>
-					<img src="https://raytracing.github.io/images/fig-1.08-pixel-samples.jpg">
-				</section>
-
-				<section data-auto-animate class="img-pixel" data-background-image="https://raytracing.github.io/images/img-1.05-normals-sphere-ground.png">
-					<h3>point sampling</h3>
-					<div class="container">
-					<div class="column">
-						<img src="https://raytracing.github.io/images/fig-1.08-pixel-samples.jpg">
-					</div>
-					<div class="column">
-							<pre style="width: fit-content; height: 450px;"><code data-trim data-noescape class="language-rust">
-    fn get_ray(&self, h: u32, w: u32) -> Ray3d {
-        // create a ray with origin at at cam_center and then points to random sample within pxl
-        let offset = Self::random_sample_sq();
-        let pixel_sample_pos: Point3 = self.pixel00_loc
-                                        + ((w as f32 + offset.x)  * self.pixel_delta_u) 
-                                        + ((h as f32 + offset.y) * self.pixel_delta_v);
- 
-        let ray_direction: Vec3 = pixel_sample_pos - self.center;
-        Ray3d { origin: self.center, direction: Dir3::new(ray_direction).unwrap() }
-    }
-
-    fn random_sample_sq() -> Vec3 {
-        let mut rand = rand::thread_rng();
-        Vec3 { x: rand.gen::&lt;f32&gt;() - 0.5 , y: rand.gen::&lt;f32&gt;() - 0.5, z: 0.0 }
-    }
-					</code></pre>	
-					</div>
-				</div>
-				</section>
-
-				<section data-auto-animate class="img-pixel" data-background-image="https://raytracing.github.io/images/img-1.05-normals-sphere-ground.png">
-					<pre data-id="code-animation"style="width: fit-content; height: 350px;"><code data-trim data-noescape data-line-numbers class="language-rust">
-fn render(&mut self) {
-	for row in 1..image_height {
-        for pixel in 1..image_width {
-						let pixel_center = pixel00_loc + (row * pixel_delta_u) + (pixel * pixel_delta_v);
-						let ray_direction = pixel_center - camera_center;
-						let ray = Ray3d::new(camera_center, ray_direction.normalize().unwrap())
-
-						let t = 0.5*(ray.direction.y() + 1.0);
-						let pixel_color = (1.0-a)*color(1.0, 1.0, 1.0) + a*color(0.5, 0.7, 1.0);
-						write_color(&mut out_handle, pixel_color);
-        }
-    }
-}
-					</code></pre>
-				</section>
-
-					<section data-auto-animate class="img-pixel" data-background-image="https://raytracing.github.io/images/img-1.05-normals-sphere-ground.png">
-					<pre data-id="code-animation" style="width: fit-content; height: 400px;"><code data-trim data-noescape data-line-numbers class="language-rust">
-fn render(&mut self) {
-	// samples_per_pixel is 50
-	self.pixel_samples_scale = 1 / self.samples_per_pixel
-	for row in 1..image_height {
-        for pixel in 1..image_width {
-                    let mut pixel_color = Color::ZERO;
-                    for _sample in 0..self.samples_per_pixel {
-                        let r = self.get_ray(row, pixel);
-                        pixel_color += Self::ray_color(&r, world);
-                    }
-
-                    write_color(&mut out_handle, &(self.pixel_sample_scale * pixel_color));
-        }
-    }
-}
-					</code></pre>
-				</section>
-
-				<section class="img-pixel" data-background-image="assets/image-1920-normal.png"></section>
-				<section data-transition="fade" class="img-pixel" data-background-image="assets/image-1920-normal.png">
-					<h3>chapter 8: diffusion!</h3>
-					<h4><em>ray tracers are built on hope</em></h4>
-				</section>
-
-				<section class="img-pixel" data-background-image="assets/image-1920-normal.png">
-					<div class="container">
-						<div class="column">
-							<img src="https://raytracing.github.io/images/fig-1.09-light-bounce.jpg">
-						</div>
-						<div class="column grey-bg">
-							<ul>
-								<li>diffuse objects don't emit light</li>
-								<li>take on the color of their surroundings</li>
-								<li>light scatters randomly off it</li>
-								<li>change the color of the light based on its material</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-				<section class="img-pixel" data-background-image="assets/image-1920-normal.png">
-					<h3>recall</h3>
-					<div class="container">
-						<div class="column">
-							<p>$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = \int_\Omega f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t) L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t) (\omega_{\text{i}}\cdot\mathbf n) \operatorname d \omega_{\text{i}}$</p>
-							<img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Rendering_eq.png">							
-						</div>
 						<div class="column">
 							<img src="https://raytracing.github.io/images/fig-1.10-random-vec-horizon.jpg">
-						</div>						
+						</div>
+						<div class="column">
+							<p>$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = {\int_\Omega} f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t) L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t) \operatorname d \omega_{\text{i}}$</p>
+							<br>
+							<p class="fragment">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = \frac{1}{\Omega_n}\sum_{n=1}^{\Omega} c L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t)$</p>
+
+						</div>
 					</div>
-				</section>		
-			<section data-auto-animate class="img-pixel" data-background-image="assets/image-1920-normal.png">
+				</section>
+
+				<section data-auto-animate data-transition="zoom">
+					<h2>RECALL</h2>
+					<p data-id="eq">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = {\int_\Omega} f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t) L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t) {\Large\color{red}(\omega_{\text{i}}\cdot\mathbf n)} \operatorname d \omega_{\text{i}}$</p>
+				</section>
+
+				<section data-auto-animate data-transition="zoom">
+					<h2>RECALL</h2>
+					<p data-id="eq">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = {\int_\Omega} f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t) L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t) {\Large\color{red}(\omega_{\text{i}}\cdot\mathbf n)} \operatorname d \omega_{\text{i}}$</p>
+					<img style="width: 800px; height: auto;"src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Lambert_Cosine_Law_1.svg/1280px-Lambert_Cosine_Law_1.svg.png">
+				</section>
+
+				<section>
 					<div class="container">
 						<div class="column">
-							<img src="https://raytracing.github.io/images/fig-1.13-surface-normal.jpg">							
+							<img style="width: 800px; height: auto;"src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Lambert_Cosine_Law_1.svg/1280px-Lambert_Cosine_Law_1.svg.png">
 						</div>
 						<div class="column">
-							<pre data-id="code-animation" style="width: fit-content; height: 250px;"><code data-trim data-noescape data-line-numbers class="language-rust">
-pub fn random_unit_vec() -> Dir3 {
-    loop {
-        let vec= random_range_vec3(-1.0..1.0);
-        let lensq = vec.length_squared();
-        if lensq <= 1.0 && 1e-60 < lensq {
-            return Dir3::new(vec / vec.length()).unwrap();
-        }
-    }
-}
-					</code></pre>
-						</div>						
-					</div>
-				</section>	
-
-			<section data-auto-animate class="img-pixel" data-background-image="assets/image-1920-normal.png">
-					<div class="container">
-						<div class="column">
-							<img src="https://raytracing.github.io/images/fig-1.13-surface-normal.jpg">							
-						</div>
-						<div class="column">
-							<pre data-id="code-animation" style="width: fit-content; height: 400px;"><code data-trim data-noescape data-line-numbers class="language-rust">
-pub fn random_unit_vec() -> Dir3 {
-    loop {
-        let vec= random_range_vec3(-1.0..1.0);
-        let lensq = vec.length_squared();
-        if lensq <= 1.0 && 1e-60 < lensq {
-            return Dir3::new(vec / vec.length()).unwrap();
-        }
-    }
-}
-
-pub fn random_unit_vec_on_hemisphere(normal: &Vec3) -> Dir3 {
-    let rnd_uvec = random_unit_vec();
-    if rnd_uvec.dot(*normal) > 0.0 {rnd_uvec} else {-rnd_uvec}
-}
-					</code></pre>
-						</div>						
-					</div>
-				</section>
-
-				<section data-auto-animate class="img-pixel" data-background-image="assets/image-1920-normal.png">
-					<img style="width: 900px; height: auto;" src="https://raytracing.github.io/images/img-1.09-no-acne.png">
-				</section>
-
-				<section class="img-pixel" data-background-image="assets/image-1920-normal.png">
-					<h2>lambert's cosine law</h2>
-					<img src="https://raytracing.github.io/images/fig-1.14-rand-unitvec.jpg">
-				</section>
-
-				<section data-auto-animate class="img-pixel" data-background-image="assets/image-1920-normal.png">
-					<pre data-id="code-animation"style="width: fit-content; height: 450px;"><code data-trim data-noescape data-line-numbers="*|5-6" class="language-rust">
-    fn ray_color&lt;T: Hittable&gt;(r: &Ray3d, child_rays: u32, world: &T) -> Color {
-        if child_rays <= 0 {return Color::new(0.0, 0.0, 0.0);}
-        match world.hit(r, Interval::interval(0.001, INFINITY)) {
-            Some(rec) => {
-                let dir_bounce = rec.normal.as_vec3() + random_unit_vec_on_hemisphere(&rec.normal).as_vec3();
-                return Self::ray_color(&Ray3d::new(rec.p, Dir3::new(dir_bounce).unwrap()), child_rays - 1, world) * 0.2;
-            },
-            None => ()
-        }
-
-        // remember -1 < y < 1, and not in the uv coordinates
-        let t = (r.direction.y + 1.0) / 2.0;
-        let color1 = Color::new(1.0,1.0,1.0);
-        let color2 = Color::new(0.5,0.7,1.0);
-        return color1.lerp(color2, t)
-    }
-					</code></pre>
-				</section>
-				<section data-auto-animate class="img-pixel" data-background-image="assets/image-1920-diffuse.png"></section>
-				<section data-auto-animate class="img-pixel" data-background-image="assets/image-1920-diffuse.png">
-					<h3 style="color: rgb(240, 241, 235);">chapter 9: reflection!</h3>
-				</section>
-				<section data-auto-animate class="img-pixel" data-background-image="assets/image-1920-diffuse.png">
-					<h3 style="color: rgb(0, 0, 0);">chapter 9: reflection!</h3>
-					<img src="https://raytracing.github.io/images/fig-1.15-reflection.jpg">
-				</section>
-				<section data-auto-animate class="img-pixel" data-background-image="assets/image-1920-diffuse.png">
-					<pre data-id="code-animation"style="width: fit-content; height: 425px;"><code data-trim data-noescape data-line-numbers class="language-rust">
-    fn ray_color&lt;T: Hittable&gt;(r: &Ray3d, child_rays: u32, world: &T) -> Color {
-        if child_rays <= 0 {return Color::new(0.0, 0.0, 0.0);}
-        match world.hit(r, Interval::interval(0.001, INFINITY)) {
-            Some(rec) => {
-                let dir_bounce = rec.normal.as_vec3() + random_unit_vec_on_hemisphere(&rec.normal).as_vec3();
-                return Self::ray_color(&Ray3d::new(rec.p, Dir3::new(dir_bounce).unwrap()), child_rays - 1, world) * 0.2;
-            },
-            None => ()
-        }
-
-        // remember -1 < y < 1, and not in the uv coordinates
-        let t = (r.direction.y + 1.0) / 2.0;
-        let color1 = Color::new(1.0,1.0,1.0);
-        let color2 = Color::new(0.5,0.7,1.0);
-        return color1.lerp(color2, t)
-    }
-					</code></pre>
-				</section>
-
-				<section data-auto-animate class="img-pixel" data-background-image="assets/image-1920-diffuse.png">
-					<pre data-id="code-animation"style="width: fit-content; height: 550px;"><code data-trim data-noescape data-line-numbers="5-8" class="language-rust">
-    fn ray_color&lt;T: Hittable&gt;(r: &Ray3d, child_rays: u32, world: &T) -> Color {
-        if child_rays <= 0 {return Color::new(0.0, 0.0, 0.0);}
-        match world.hit(r, Interval::interval(0.001, INFINITY)) {
-            Some(rec) => {
-                match rec.mat.scatter(&r.direction, &rec) {
-                    Some((attenuation, scattered)) => {
-                        return attenuation * Self::ray_color(&scattered, child_rays-1, world)
-                    },
-                    None => {return Color::new(0.0,0.0,0.0)}
-                }
-            },
-            None => ()
-        }
-
-        // remember -1 < y < 1, and not in the uv coordinates
-        let t = (r.direction.y + 1.0) / 2.0;
-        let color1 = Color::new(1.0,1.0,1.0);
-        let color2 = Color::new(0.5,0.7,1.0);
-        return color1.lerp(color2, t)
-    }
-					</code></pre>
-				</section>	
-				
-				<section data-auto-animate class="img-pixel" data-background-image="assets/image-1920-diffuse.png">
-					<pre data-id="code-animation"style="width: fit-content; height: 550px;"><code data-trim data-noescape data-line-numbers="5-8" class="language-rust">
-    fn ray_color&lt;T: Hittable&gt;(r: &Ray3d, child_rays: u32, world: &T) -> Color {
-        if child_rays <= 0 {return Color::new(0.0, 0.0, 0.0);}
-        match world.hit(r, Interval::interval(0.001, INFINITY)) {
-            Some(rec) => {
-                match rec.mat.scatter(&r.direction, &rec) {
-                    Some((attenuation, scattered)) => {
-                        return attenuation * Self::ray_color(&scattered, child_rays-1, world)
-                    },
-                    None => {return Color::new(0.0,0.0,0.0)}
-                }
-            },
-            None => ()
-        }
-
-        // remember -1 < y < 1, and not in the uv coordinates
-        let t = (r.direction.y + 1.0) / 2.0;
-        let color1 = Color::new(1.0,1.0,1.0);
-        let color2 = Color::new(0.5,0.7,1.0);
-        return color1.lerp(color2, t)
-    }
-					</code></pre>
-					<pre data-id="code-animation"style="width: fit-content; height: 300px;"><code data-trim data-noescape data-line-numbers class="language-rust">
-impl Material for MetalMaterial {
-    fn scatter(&self, dir_in: &Vec3, rec: &HitRecord) -> Option<(Color, Ray3d)> {
-        let reflected_vector: Vec3 = reflect_vec3(dir_in, &rec.normal.as_vec3());
-        let reflected_vector = reflected_vector.normalize();
-
-        let scattered_ray = Ray3d::new(rec.p, Dir3::new(reflected_vector).unwrap());
-        if scattered_ray.direction.dot(rec.normal.as_vec3()) > 0.0 {
-            Some((self.albedo, scattered_ray))
-        } else { None }
-    }
-}
-					</code></pre>					
-				</section>
-				<section data-background-image="assets/image-1920-perfectrefl.png"></section>				
-				<section data-auto-animate data-background-image="assets/image-1920-perfectrefl.png">
-					<img src="https://raytracing.github.io/images/fig-1.16-reflect-fuzzy.jpg">
-				</section>				
-				<section data-auto-animate data-background-image="assets/image-1920-perfectrefl.png">
-					<div class="container">
-						<div class="column">
-							<img src="https://raytracing.github.io/images/fig-1.16-reflect-fuzzy.jpg">
-						</div>
-						<div class="column">
-												<pre data-id="code-animation"style="width: fit-content; height: 300px;"><code data-trim data-noescape data-line-numbers="*|4" class="language-rust">
-impl Material for MetalMaterial {
-    fn scatter(&self, dir_in: &Vec3, rec: &HitRecord) -> Option<(Color, Ray3d)> {
-        let reflected_vector: Vec3 = reflect_vec3(dir_in, &rec.normal.as_vec3());
-        let reflected_vector = reflected_vector.normalize();
-
-        let scattered_ray = Ray3d::new(rec.p, Dir3::new(reflected_vector).unwrap());
-        if scattered_ray.direction.dot(rec.normal.as_vec3()) > 0.0 {
-            Some((self.albedo, scattered_ray))
-        } else { None }
-    }
-}
-					</code></pre>		
+							<p>$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = \frac{1}{\Omega_n}\sum_{n=1}^{\Omega} c L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t)$</p>
+							<br>
+							<p style="font-size: 90%" class="fragment">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = \frac{1}{\Omega_n}\sum_{n=1}^{\Omega} c L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t)(\omega_{\text{i}}\cdot\mathbf n)$</p>
 						</div>
 					</div>
-				</section>	
-				<section data-auto-animate data-background-image="assets/image-1920-perfectrefl.png">
-					<div class="container">
-						<div class="column">
-							<img src="https://raytracing.github.io/images/fig-1.16-reflect-fuzzy.jpg">
-						</div>
-						<div class="column">
-												<pre data-id="code-animation"style="width: fit-content; height: 300px;"><code data-trim data-noescape data-line-numbers="4" class="language-rust">
-impl Material for MetalMaterial {
-    fn scatter(&self, dir_in: &Vec3, rec: &HitRecord) -> Option<(Color, Ray3d)> {
-        let reflected_vector: Vec3 = reflect_vec3(dir_in, &rec.normal.as_vec3());
-        let reflected_vector = reflected_vector.normalize() * self.fuzz * random_unit_vec();
-
-        let scattered_ray = Ray3d::new(rec.p, Dir3::new(reflected_vector).unwrap());
-        if scattered_ray.direction.dot(rec.normal.as_vec3()) > 0.0 {
-            Some((self.albedo, scattered_ray))
-        } else { None }
-    }
-}
-					</code></pre>		
-						</div>
-					</div>
-				</section>				
-				
-				<section data-background-image="assets/image-1920-fuzzrefl.png"></section>
-				<section data-transition="fade" data-background-image="assets/image-1920-fuzzrefl.png">
-					<h3 style="color: rgb(240, 241, 235);">chapter 10: refraction!</h3>
 				</section>
 				
-				<section data-auto-animate data-background-image="assets/image-1920-fuzzrefl.png">
-					<h2 style="color: rgb(240, 241, 235);">recall</h2>
-				</section>
-				
-				<section data-auto-animate data-background-image="assets/image-1920-fuzzrefl.png">
-					<h2 style="color: rgb(240, 241, 235);">recall</h2>
-					<img src="https://raytracing.github.io/images/fig-1.17-refraction.jpg">
-				</section>	
-				<section style="color: rgb(240, 241, 235);" data-auto-animate data-background-image="assets/image-1920-fuzzrefl.png">
-					<h2 >recall</h2>
-					<img src="https://raytracing.github.io/images/fig-1.17-refraction.jpg">
-					<p>$\mathbf{R'} = \mathbf{R'}_{\bot} + \mathbf{R'}_{\parallel}$</p>
-					<p>$\mathbf{R'}_{\bot} = \frac{\eta}{\eta'} (\mathbf{R} + |\mathbf{R}| \cos(\theta) \mathbf{n})  = \frac{\eta}{\eta'} (\mathbf{R} + (\mathbf{-R} \cdot \mathbf{n}) \mathbf{n})$</p>
-					<p>$\mathbf{R'}_{\parallel} = -\sqrt{1 - |\mathbf{R'}_{\bot}|^2} \mathbf{n}$</p>
-				</section>
-
-				<section data-auto-animate style="color: rgb(240, 241, 235);" data-background-image="assets/image-1920-fuzzrefl.png">
-					<h2 style="color: rgb(240, 241, 235);"> also recall</h2>
-					<img src="https://www.dorian-iten.com/wp-content/uploads/2017/02/fresnel-shallowandsteep.jpg">
-					<img style="margin-bottom: -30px;"src="https://www.dorian-iten.com/wp-content/uploads/2017/02/fresnel-animation-1.gif">
-				</section>	
-
-				<section data-auto-animate style="color: rgb(240, 241, 235);" data-background-image="assets/image-1920-fuzzrefl.png">
-					<h2> also recall</h2>
-					<img src="https://www.dorian-iten.com/wp-content/uploads/2017/02/fresnel-shallowandsteep.jpg">
-					<img style="margin-bottom: -30px;"src="https://www.dorian-iten.com/wp-content/uploads/2017/02/fresnel-animation-1.gif">
-					<p style="margin-top: 30px;">$  R_\mathrm{s} = \left|\frac{n_1 \cos \theta_\mathrm{i} - n_2 \cos \theta_\mathrm{t}}{n_1 \cos \theta_\mathrm{i} + n_2 \cos \theta_\mathrm{t}}\right|^2
-               = \left|\frac
-                         {n_1 \cos \theta_{\mathrm{i}} - n_2 \sqrt{1 - \left(\frac{n_1}{n_2} \sin \theta_{\mathrm{i}}\right)^2}}
-                         {n_1 \cos \theta_{\mathrm{i}} + n_2 \sqrt{1 - \left(\frac{n_1}{n_2} \sin \theta_{\mathrm{i}}\right)^2}}
-                 \right|^2\!,$</p>
-					<p>$R_\mathrm{p} = \left|\frac{n_1 \cos \theta_\mathrm{t} - n_2 \cos \theta_\mathrm{i}}{n_1 \cos \theta_\mathrm{t} + n_2 \cos \theta_\mathrm{i}}\right|^2
-               = \left|\frac
-                         {n_1 \sqrt{1 - \left(\frac{n_1}{n_2} \sin \theta_\mathrm{i}\right)^2} - n_2 \cos \theta_\mathrm{i}}
-                         {n_1 \sqrt{1 - \left(\frac{n_1}{n_2} \sin \theta_\mathrm{i}\right)^2} + n_2 \cos \theta_\mathrm{i}}
-                 \right|^2\!.$</p>
-				</section>
-
-				<section data-auto-animate style="color: rgb(240, 241, 235);" data-background-image="assets/image-1920-fuzzrefl.png">
-					<h2 style="color: rgb(240, 241, 235);"> also recall</h2>
-					<img src="https://www.dorian-iten.com/wp-content/uploads/2017/02/fresnel-shallowandsteep.jpg">
-					<img style="margin-bottom: -30px;"src="https://www.dorian-iten.com/wp-content/uploads/2017/02/fresnel-animation-1.gif">
-					<p style="margin-top: 30px;">$ R(\theta) = R_0 + (1 - R_0)(1 - \cos \theta)^5$ </p>
-				</section>
-
-				<section style="color: rgb(240, 241, 235);" data-auto-animate data-background-image="assets/image-1920-fuzzrefl.png">
-					<pre data-id="code-animation"style="width: fit-content; height: 175px;"><code data-trim data-noescape class="language-rust">
-pub fn refract_vec3(v: &Vec3, n: &Vec3, etai_div_etat: f32) -> Vec3 {
-    let cos_theta = -v.dot(*n).min(1.0);
-    let r_out_perp = etai_div_etat * (v + cos_theta*n);
-    let r_out_parallel = -sqrt(abs(1.0 - r_out_perp.length_squared())) * n;
-    r_out_parallel + r_out_perp
-}
-					</code></pre>
-				</section>	
-
-				<section data-background-image="assets/image-1920-refract.png"></section>
-			
-				<section data-auto-animate style="color: rgb(240, 241, 235);" data-background-image="assets/image-1920-refract.png">
-					<h2 style="color: rgb(240, 241, 235);">also also recall</h2>
-					<p style="margin-top: 30px;">$\frac{1.5}{1.0} \cdot \sin\theta \rlap{\kern.45em$|$}> 1.0$</p>
-					<p>$\sin\theta  = \sqrt{1 - \cos^2\theta}$</p>
-					<p>$\cos\theta = \mathbf{R} \cdot \mathbf{n}$</p>
-				</section>	
-
-				<section style="color: rgb(240, 241, 235);" data-auto-animate data-background-image="assets/image-1920-refract.png">
-					<pre data-id="code-animation"style="width: fit-content; height: 750px;"><code data-trim data-noescape data-line-numbers="*|4,7-11|4,7-8,22-28|12,15" class="language-rust">
-impl Material for DielectricMaterial {
-    fn scatter(&self, ray_in: &Vec3, rec: &HitRecord) -> Option&lt;(Color, Ray3d)&gt; {
-        let attenuation = Color::new(1.0,1.0,1.0);
-        let ri_correct = if rec.front_face {1.0 / self.refraction_index} else {self.refraction_index};
-        
-        let ray_normalized = ray_in.normalize();
-        let cos_theta = -ray_normalized.dot(*rec.normal).min(1.0);
-        let sin_theta = sqrt(1.0 - cos_theta*cos_theta);
-        let cannot_refract = ri_correct * sin_theta > 1.0;
-
-        if cannot_refract || Self::reflectance(cos_theta, ri_correct) > random_f32() {
-            let reflected_ray = reflect_vec3(&ray_normalized, &rec.normal);
-            return Some((attenuation, Ray3d::new(rec.p,Dir3::new(reflected_ray).unwrap())));
-        } else {
-            let refracted_ray = refract_vec3(&ray_normalized, &rec.normal, ri_correct);
-            return Some((attenuation, Ray3d::new(rec.p,Dir3::new(refracted_ray).unwrap())));
-        }
-
-    }
-}
-
-fn reflectance(cosine: f32, ri: f32) -> f32 {
-	// schlick/fresnel
-	let r0 = (1.0 - ri) / (1.0 + ri);
-	let r0 = r0*r0;
-
-	r0 + (1.0-r0) * (1.0 - cosine).powi(5)
-}
-					</code></pre>
-				</section>	
-							<section style="color: rgb(240, 241, 235);" data-background-image="assets/image-1920-refract.png">
-					<pre style="width: fit-content; height: 325px;"><code data-trim data-noescape data-line-numbers="" class="language-rust">
-    let mut world: HittableList = HittableList::hittable_list(None);
-    let mat_ground: Rc&lt;LambertianMaterial&gt; = Rc::new(LambertianMaterial{albedo: Color::new(0.8, 0.8, 0.0)});
-    let mat_center: Rc&lt;LambertianMaterial&gt; = Rc::new(LambertianMaterial{albedo: Color::new(0.1, 0.2, 0.5)});
-    let mat_left: Rc&lt;DielectricMaterial&gt; = Rc::new(DielectricMaterial::new(1.50));
-    let mat_bubble: Rc&lt;DielectricMaterial&gt; = Rc::new(DielectricMaterial::new(1.00/1.50));
-    let mat_right: Rc&lt;MetalMaterial&gt; = Rc::new(MetalMaterial::new(Color::new(0.8, 0.6, 0.2), 1.0 ));
-
-    world.add(Rc::new(sphere(Point3::new(0.0, 0.0, -1.2), 0.5, mat_center)));
-    world.add(Rc::new(sphere(Point3::new(0.0, -100.5, -1.0), 100.0, mat_ground)));
-    world.add(Rc::new(sphere(Point3::new(-1.0, 0.0, -1.0), 0.5, mat_left)));
-    world.add(Rc::new(sphere(Point3::new(-1.0, 0.0, -1.0), 0.4, mat_bubble)));
-    world.add(Rc::new(sphere(Point3::new(1.0, 0.0, -1.0), 0.5, mat_right)));
-					</code></pre>
-				</section>
-
-			<section data-background-image="assets/image-1920-refractbubble.png"></section>
-			
-			
-			
 			
 			</div>
 			</div>
@@ -994,7 +178,6 @@ fn reflectance(cosine: f32, ri: f32) -> f32 {
 		<script src="plugin/highlight/highlight.js"></script>
 		<script src="plugin/math/math.js"></script>
 		<script src="plugin/zoom/zoom.js"></script>
-		<script src="https://unpkg.com/pdfobject"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
@@ -1006,13 +189,7 @@ fn reflectance(cosine: f32, ri: f32) -> f32 {
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealHighlight, RevealNotes, RevealMath.KaTeX, RevealZoom]
 			});
-			
-			let options = {
-				pdfOpenParams: {pagemode: "none"}
-			}
-			PDFObject.embed("./assets/arnold.pdf", "#arnold-pdf", options);
-			PDFObject.embed("./assets/hyperion.pdf", "#hyperion-pdf", options);
-			PDFObject.embed("./assets/renderman.pdf", "#renderman-pdf", options);
+		
 
 		</script>
 	</body>
