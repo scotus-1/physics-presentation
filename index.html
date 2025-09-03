@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>path tracing</title>
+		<title>the rendering equation</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -105,7 +105,7 @@
 				
 				<section data-auto-animate data-transition="fade-out">
 					<p data-id="eq">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = {\Large\color{red} \int_\Omega} f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t) L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t) (\omega_{\text{i}}\cdot\mathbf n) \operatorname d \omega_{\text{i}}$</p>
-					<p>light out = the sum of every reflected light ray inside the hemisphere</p>
+					<p>light out = the continuous sum of every reflected light ray from inside the hemisphere</p>
 				</section>
 
 				<section data-auto-animate data-transition="fade">
@@ -118,7 +118,7 @@
 				</section>
 				
 				<section data-auto-animate data-transition="slide">
-					<p data-id="eq2">what is a $f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t)$</p>
+					<p data-id="eq2">what is a $f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t)$?</p>
 					<img src="assets/brdfs.png">
 					<p><small>ref: Cook and Torrence, 1982</small></p>
 				</section>
@@ -155,6 +155,8 @@
 					<img style="width: 800px; height: auto;"src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Lambert_Cosine_Law_1.svg/1280px-Lambert_Cosine_Law_1.svg.png">
 				</section>
 
+
+
 				<section data-auto-animate="">
 					<div class="container">
 						<div class="column">
@@ -166,6 +168,12 @@
 							<p style="font-size: 90%" class="fragment">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = \frac{1}{\Omega_n}\sum_{n=1}^{\Omega} c L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t)(\omega_{\text{i}}\cdot\mathbf n)$</p>
 						</div>
 					</div>
+				</section>
+
+				<section data-auto-animate>
+					<h4 data-id="rltext">render by random sampling our integral</h4>
+					<video class="fade-out r-stretch" muted loop data-autoplay src="./assets/eye2light.mp4"></video>
+					<div class="caption">video: "Coding Adventures: Ray Tracing" by Sebastian Lague</div>
 				</section>
 
 				<section data-auto-animate>
