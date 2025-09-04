@@ -93,7 +93,7 @@
 				<section data-auto-animate>
 					<h2>the rendering equation</h2>
 					<h3>what's in a image?</h3>
-					<p><small>by titus nguyen</small></p>
+					<p>by titus nguyen</p>
 				</section>
 			
 				<section data-auto-animate>
@@ -104,28 +104,37 @@
 				</section>		
 				
 				<section data-auto-animate data-transition="fade-out">
+					<p>light out = the continuous sum of every reflected light ray inside the hemisphere</p>
 					<p data-id="eq">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = {\Large\color{red} \int_\Omega} f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t) L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t) (\omega_{\text{i}}\cdot\mathbf n) \operatorname d \omega_{\text{i}}$</p>
-					<p>light out = the sum of every reflected light ray inside the hemisphere</p>
+					<ul>
+						<li class="fragment">$f_{\text{r}}$ = bidirectional reflectance distribution function</li>
+						<li class="fragment">$L_{\text{i}}$ = intensity/color of the incident light</li>
+						<span class="fragment"><li class="fragment fade-out">$(\omega_{\text{i}}\cdot\mathbf n)$ = smearing of light flux</li></span>
+					</ul>
 				</section>
 
 				<section data-auto-animate data-transition="fade">
-					<p data-id="eq2">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t)$</p>
+					<h2 data-id="eq2">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t)$</h2>
 				</section>
 
 				<section data-auto-animate data-transition="fade">
-					<p data-id="eq2">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t)$</p>
-					<img src="assets/reflectance.png">
+					<h2 style="font-size: 100%;" data-id="eq2">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t)$</h2>
+					<img style="height: 800px; width: auto;" src="assets/reflectance.png">
 				</section>
 				
 				<section data-auto-animate data-transition="slide">
-					<p data-id="eq2">what is a $f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t)$</p>
-					<img src="assets/brdfs.png">
+					<h2 data-id="eq3">what is a $f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t)$?</h2>
+				</section>
+
+				<section data-auto-animate data-transition="slide">
+					<h2 style="font-size: 100%;" data-id="eq3">what is a $f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t)$?</h2>
+					<img style="height: 800px; width: auto;" src="assets/brdfs.png">
 					<p><small>ref: Cook and Torrence, 1982</small></p>
 				</section>
 				
 
 				<section data-auto-animate>
-					<p data-id="eq2">what is our $f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t)$?</p>
+					<h2 style="font-size: 120%;" data-id="eq2">what is our $f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t)$?</h2>
 					<img src="https://raytracing.github.io/images/fig-1.10-random-vec-horizon.jpg">
 					<p><small>ref: Shirley, 2018</small></p>
 				</section>
@@ -169,29 +178,76 @@
 				</section>
 
 				<section data-auto-animate>
-					<p data-id="eq">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = {\int_\Omega} f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t) L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t) (\omega_{\text{i}}\cdot\mathbf n) \operatorname d \omega_{\text{i}} = $</p>
+					<p>$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = \frac{1}{\Omega_n}\sum_{n=1}^{\Omega} c L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t)(\omega_{\text{i}}\cdot\mathbf n)$ = </p>
 					<img class="r-stretch" src="assets/image-1920-diffuse.png">
-					<p><small>perfectly cloudy, blue sky; two perfectly diffuse surfaces</small></p>
+					<p>perfectly cloudy, blue sky; two perfectly diffuse surfaces</p>
 				</section>
 				
 				<section data-auto-animate>
-					<p data-id="eq">$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = {\int_\Omega} f_{\text{r}}(\mathbf x, \omega_{\text{i}}, \omega_{\text{o}}, \lambda, t) L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t) (\omega_{\text{i}}\cdot\mathbf n) \operatorname d \omega_{\text{i}} = $</p>
+					<p>$L_{\text{r}}(\mathbf x, \omega_{\text{o}}, \lambda, t) = \frac{1}{\Omega_n}\sum_{n=1}^{\Omega} c L_{\text{i}}(\mathbf x, \omega_{\text{i}}, \lambda, t)(\omega_{\text{i}}\cdot\mathbf n)$ = </p>
 					<img class="r-stretch" src="assets/image-1920-diffuse.png">
 					<h2>what's in a image?</h2>
 
 				</section>
 				
 				<section data-auto-animate data-transition="fade-out">
-					<h2>what's in a image?</h2>
+					<h3>1920 x 1080 x 500 rays/pxl x 500 rays/ray</h3>
 					<img class="r-stretch" src="assets/image-1920-diffuse.png">
-					<p>1920 x 1080 x 500 rays/pxl x 500 rays/ray</p>
+					<h2>what's in a image?</h2>
 				</section>
 
-				<section data-transition="zoom">
-					<h3 class="r-fit-text">5.2 billion rays</h3>
+				<section  data-auto-animate data-transition="zoom">
+					<h3 class="r-fit-text" data-id="big">5.2 billion rays</h3>
 				</section>
 
-				<section data-transition="fade-in">
+				<section data-auto-animate>
+					<h3 style="font-size: 300%;" data-id="big">5.2 billion rays</h3>
+					<p class="fragment"> x 100,000,000 operations per ray per frame</p>
+					<p class="fragment"> x 24 frames per second</p>
+					<p class="fragment"> x 60 seconds per minute</p>
+					<p class="fragment"> x 90 minutes per movie</p>
+					<h2 class="fragment"><b>= $6.7 \times 10^{22}$ operations per movie</b></h2>
+				</section>
+
+				<section data-auto-animate>
+					<h2><b>= $6.7 \times 10^{22}$ operations per movie</b></h2>
+					<div class="container">
+						<div class="column">
+							<img src="https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/graphic-cards/50-series/rtx-5090/geforce-rtx-5090-af550-t.jpg">
+						</div>
+						<div class="column">
+							<h3>NVIDIA RTX 5090</h3>
+							<ul>
+								<li class="fragment">$2000 (not including electricity)</li>
+								<li class="fragment">$10^{14}$ operations per second</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section data-auto-animate>
+					<h2><b>= $6.7 \times 10^{22}$ operations per movie</b></h2>
+					<div class="container">
+						<div class="column">
+							<img src="https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/graphic-cards/50-series/rtx-5090/geforce-rtx-5090-af550-t.jpg">
+						</div>
+						<div class="column">
+							<h3>NVIDIA RTX 5090</h3>
+							<ul>
+								<li>$2000 (not including electricity)</li>
+								<li>$10^{14}$ operations per second</li>
+							</ul>
+						</div>
+					</div>
+					<h1>19 years to render!</h1>
+				</section>
+
+				<section>
+					<img style="width: 800px; height: auto;" src="http://pixarteam3.pbworks.com/f/1323040827/rtuk_feature_pixar_20.jpg">
+					<img style="width: 1200px; height: auto;" src="https://assets.renderman.pixar.com/Coco/Fxguide_Coco/coco1.jpg">
+				</section>
+
+				<section data-transition="fade">
 					<h3>thank you</h3>
 				</section>
 			
